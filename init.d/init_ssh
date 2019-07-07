@@ -1,0 +1,3 @@
+mkdir -p ~/.ssh
+ln -s ./ssh/config ~/.ssh/config
+ssh-keygen -b 4096 -t rsa -f ~/.ssh/github.id_rsa
