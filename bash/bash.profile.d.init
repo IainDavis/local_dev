@@ -1,5 +1,5 @@
 #!/bin/bash
-for file in ~/.bash.profile.d/*
+for f in ~/.bash.profile.d/*
 do 
-    source file
+    source f
 done
