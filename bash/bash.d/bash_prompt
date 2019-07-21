@@ -14,7 +14,7 @@ CLEAR=$(tput sgr0)
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
-virtualenv_info(){
+function virtualenv_info(){
 	local VENV
 	# Get Virtual Env
 	if [[ -n "$VIRTUAL_ENV" ]]; then
@@ -28,13 +28,13 @@ virtualenv_info(){
 	[[ -n "$VENV" ]] && echo "${MAGENTA}($VENV)${SPACE}"
 }
 
-leading_newline() {
+function leading_newline() {
 	if [ "$(current_row)" != "0" ]; then echo "${NEWLINE} ";
 	else echo " "
 	fi
 }
 
-git_branch() {
+function git_branch() {
 	local RESULT
 	local SUCCESS=0
 	local BRANCH
@@ -54,7 +54,7 @@ git_branch() {
 }
 
 
-start_prompt() {
+function start_prompt() {
 	exec < /dev/tty
 	oldstty=$(stty -g)
 	stty raw -echo min 0

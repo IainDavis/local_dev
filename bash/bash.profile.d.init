@@ -1,5 +1,7 @@
 #!/bin/bash
-for f in ~/.bash.profile.d/*
-do 
-    source f
-done
+if [ "$(ls ~/.bash.profile.d)" != "" ]; then
+	for f in ~/.bash.profile.d/*
+	do 
+		 source f
+	done
+fi

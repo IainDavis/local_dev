@@ -1,5 +1,8 @@
 #!/bin/bash
-for f in ~/.bash.d/*
-do
-    source f
-done
+
+if [ "$(ls ~/.bash.d)" != "" ]; then
+	for f in ~/.bash.d/*
+	do
+	    source $f
+	done
+fi
